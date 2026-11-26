@@ -15,7 +15,7 @@ function pad(number) {
 
 // ---------- Cupos ----------
 
-export functiCon spotsLeft(event) {
+export function spotsLeft(event) {
   return Math.max(0, event.capacity - event.registered);
 }
 
