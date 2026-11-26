@@ -18,6 +18,7 @@ function pad(number) {
 export function spotsLeft(event) {
   return Math.max(0, event.capacity - event.registered);
 }
+///
 
 export function isFull(event) {
   return spotsLeft(event) === 0;
