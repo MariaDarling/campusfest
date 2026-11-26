@@ -16,8 +16,9 @@ function pad(number) {
 // ---------- Cupos ----------
 
 export function spotsLeft(event) {
-  return event.capacity - event.registered;
+  return Math.max(0, event.capacity - event.registered);
 }
+///
 
 export function isFull(event) {
   return spotsLeft(event) === 0;
@@ -63,9 +64,7 @@ export function countdownLabel(dateStr, todayStr) {
 }
 
 export function sortByDate(events) {
-  return [...events].sort((a, b) =>
-    formatShortDate(a.date).localeCompare(formatShortDate(b.date)),
-  );
+  return [...events].sort((a, b) => a.date.localeCompare(b.date));
 }
 
 // ---------- Búsqueda y filtros ----------
